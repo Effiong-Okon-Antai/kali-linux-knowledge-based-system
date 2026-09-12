@@ -1,0 +1,1511 @@
+@prefix : <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix KaliLinuxTools: <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#> .
+@base <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#> .
+
+<http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools> rdf:type owl:Ontology ;
+                                                                     rdfs:comment "A SEMANTICALLY DEVELOPED KNOWLEDGE-BASED SYSTEM FOR DEPLOYING KALI LINUX TOOLS’’"@en .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+<http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#SuggestedToolChain
+KaliLinuxTools:SuggestedToolChain rdf:type owl:ObjectProperty ;
+                                  rdfs:domain KaliLinuxTools:Tool ;
+                                  rdfs:range KaliLinuxTools:Tool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#belongsToCategory
+KaliLinuxTools:belongsToCategory rdf:type owl:ObjectProperty ;
+                                 rdfs:domain KaliLinuxTools:Tool ;
+                                 rdfs:range KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#isFollowedBy
+KaliLinuxTools:isFollowedBy rdf:type owl:ObjectProperty ;
+                            rdfs:domain KaliLinuxTools:Tool ;
+                            rdfs:range KaliLinuxTools:Tool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#isUsedFor
+KaliLinuxTools:isUsedFor rdf:type owl:ObjectProperty ;
+                         rdfs:domain KaliLinuxTools:Tool ;
+                         rdfs:range KaliLinuxTools:Task .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#requiresSkillLevel
+KaliLinuxTools:requiresSkillLevel rdf:type owl:ObjectProperty ;
+                                  rdfs:domain KaliLinuxTools:Tool ;
+                                  rdfs:range KaliLinuxTools:UserLevel .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#hasCommand
+KaliLinuxTools:hasCommand rdf:type owl:DatatypeProperty ;
+                          rdfs:domain KaliLinuxTools:Tool ;
+                          rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#hasDescription
+KaliLinuxTools:hasDescription rdf:type owl:DatatypeProperty ;
+                              rdfs:domain KaliLinuxTools:Tool ;
+                              rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#hasEthicalNote
+KaliLinuxTools:hasEthicalNote rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#hasLegalNote
+KaliLinuxTools:hasLegalNote rdf:type owl:DatatypeProperty ;
+                            rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#preferredPhase
+KaliLinuxTools:preferredPhase rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#riskLevel
+KaliLinuxTools:riskLevel rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty .
+
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:comment "data properties connect individuals to literal values such as text, numbers, or commands"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AdvancedTool
+KaliLinuxTools:AdvancedTool rdf:type owl:Class ;
+                            rdfs:subClassOf KaliLinuxTools:UserLevel ;
+                            rdfs:comment "The ontology and taxonomy are designed strictly for lawful penetration testing and cybersecurity training. All examples assume that tools are used within authorised environments"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AttacksMITM
+KaliLinuxTools:AttacksMITM rdf:type owl:Class ;
+                           rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AttacksVulnerability
+KaliLinuxTools:AttacksVulnerability rdf:type owl:Class ;
+                                    rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#BeginnerTool
+KaliLinuxTools:BeginnerTool rdf:type owl:Class ;
+                            rdfs:subClassOf KaliLinuxTools:UserLevel ;
+                            rdfs:comment "The ontology and taxonomy are designed strictly for lawful penetration testing and cybersecurity training. All examples assume that tools are used within authorised environments"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Category
+KaliLinuxTools:Category rdf:type owl:Class ;
+                        rdfs:comment "Categories"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#CrackPassword
+KaliLinuxTools:CrackPassword rdf:type owl:Class ;
+                             rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#CrackWireless
+KaliLinuxTools:CrackWireless rdf:type owl:Class ;
+                             rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#CrackingPassWord
+KaliLinuxTools:CrackingPassWord rdf:type owl:Class ;
+                                rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitWebApplication
+KaliLinuxTools:ExploitWebApplication rdf:type owl:Class ;
+                                     rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationDatabase
+KaliLinuxTools:ExploitationDatabase rdf:type owl:Class ;
+                                    rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationPassword
+KaliLinuxTools:ExploitationPassword rdf:type owl:Class ;
+                                    rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationPayload
+KaliLinuxTools:ExploitationPayload rdf:type owl:Class ;
+                                   rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationTool
+KaliLinuxTools:ExploitationTool rdf:type owl:Class ;
+                                rdfs:subClassOf KaliLinuxTools:Tool ;
+                                rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ForensicsTool
+KaliLinuxTools:ForensicsTool rdf:type owl:Class ;
+                             rdfs:subClassOf KaliLinuxTools:Tool ;
+                             rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#InformationCollaboration
+KaliLinuxTools:InformationCollaboration rdf:type owl:Class ;
+                                        rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#InformationGathering
+KaliLinuxTools:InformationGathering rdf:type owl:Class ;
+                                    rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#IntermidiateTool
+KaliLinuxTools:IntermidiateTool rdf:type owl:Class ;
+                                rdfs:subClassOf KaliLinuxTools:UserLevel ;
+                                rdfs:comment "The ontology and taxonomy are designed strictly for lawful penetration testing and cybersecurity training. All examples assume that tools are used within authorised environments"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ManInTheMiddle
+KaliLinuxTools:ManInTheMiddle rdf:type owl:Class ;
+                              rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#NetworkScanningTool
+KaliLinuxTools:NetworkScanningTool rdf:type owl:Class ;
+                                   rdfs:subClassOf KaliLinuxTools:Tool ;
+                                   rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#PasswordCrackingTool
+KaliLinuxTools:PasswordCrackingTool rdf:type owl:Class ;
+                                    rdfs:subClassOf KaliLinuxTools:Tool ;
+                                    rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#PortScanner
+KaliLinuxTools:PortScanner rdf:type owl:Class ;
+                           rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ReportCollaborationTool
+KaliLinuxTools:ReportCollaborationTool rdf:type owl:Class ;
+                                       rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ReportingTool
+KaliLinuxTools:ReportingTool rdf:type owl:Class ;
+                             rdfs:subClassOf KaliLinuxTools:Tool ;
+                             rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ScanningForensics
+KaliLinuxTools:ScanningForensics rdf:type owl:Class ;
+                                 rdfs:subClassOf KaliLinuxTools:SuggestedTool .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#SniffingSpoofingTool
+KaliLinuxTools:SniffingSpoofingTool rdf:type owl:Class ;
+                                    rdfs:subClassOf KaliLinuxTools:Tool ;
+                                    rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#SuggestedTool
+KaliLinuxTools:SuggestedTool rdf:type owl:Class ;
+                             rdfs:comment "Suggested Tools for a particular Category" .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Task
+KaliLinuxTools:Task rdf:type owl:Class ;
+                    rdfs:comment "Task"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Tool
+KaliLinuxTools:Tool rdf:type owl:Class ;
+                    rdfs:comment "Taxonomy of Kali Linux Tools"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#UserLevel
+KaliLinuxTools:UserLevel rdf:type owl:Class ;
+                         rdfs:comment "The ontology and taxonomy are designed strictly for lawful penetration testing and cybersecurity training. All examples assume that tools are used within authorised environments" .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#VulnerabilityAnalysisTool
+KaliLinuxTools:VulnerabilityAnalysisTool rdf:type owl:Class ;
+                                         rdfs:subClassOf KaliLinuxTools:Tool ;
+                                         rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#WirelessAttackTool
+KaliLinuxTools:WirelessAttackTool rdf:type owl:Class ;
+                                  rdfs:subClassOf KaliLinuxTools:Tool ;
+                                  rdfs:comment "Use this tool responsibly and only in authorized environments."@en .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Advanced
+KaliLinuxTools:Advanced rdf:type owl:NamedIndividual ,
+                                 KaliLinuxTools:UserLevel ;
+                        rdfs:comment "Use this tool responsibly and only in authorized environments."@en ;
+                        rdfs:label "Advanced"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Aircrackng
+KaliLinuxTools:Aircrackng rdf:type owl:NamedIndividual ,
+                                   KaliLinuxTools:WirelessAttackTool ;
+                          KaliLinuxTools:SuggestedToolChain KaliLinuxTools:Airmonng ;
+                          KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackingWireless ;
+                          KaliLinuxTools:isFollowedBy KaliLinuxTools:Airmonng ;
+                          KaliLinuxTools:isUsedFor KaliLinuxTools:TestWiFiSecurity ;
+                          KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                          KaliLinuxTools:hasCommand "aircrack-ng capture.cap" ;
+                          KaliLinuxTools:hasDescription "Cracks WEP/WPA keys from captured packets" ;
+                          KaliLinuxTools:hasEthicalNote "\"Crack keys only for networks you own or are authorised to test.\"" ;
+                          KaliLinuxTools:hasLegalNote "\"Prohibited on unauthorised Wi-Fi infrastructure.\"" ;
+                          KaliLinuxTools:preferredPhase "Exploit (Wireless)" ;
+                          KaliLinuxTools:riskLevel "High" ;
+                          rdfs:comment "Cracks WEP/WPA keys from captured packets"@en ;
+                          rdfs:label "Aircracking"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Airmonng
+KaliLinuxTools:Airmonng rdf:type owl:NamedIndividual ,
+                                 KaliLinuxTools:WirelessAttackTool ;
+                        KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackingWireless ;
+                        KaliLinuxTools:isUsedFor KaliLinuxTools:TestWiFiSecurity ;
+                        KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                        KaliLinuxTools:hasCommand "airmon-ng start wlan0" ;
+                        KaliLinuxTools:hasDescription "Enables monitor mode on wireless interfaces" ;
+                        KaliLinuxTools:hasEthicalNote "\"Switch interfaces to monitor mode only on authorised wireless networks.\"" ;
+                        KaliLinuxTools:hasLegalNote "\"Capturing Wi-Fi traffic without consent is unlawful.\"" ;
+                        KaliLinuxTools:preferredPhase "Recon (Wireless)" ;
+                        KaliLinuxTools:riskLevel "Medium" ;
+                        rdfs:comment "Enables monitor mode"@en ;
+                        rdfs:label "Airmonng"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AnalyzeArtifacts
+KaliLinuxTools:AnalyzeArtifacts rdf:type owl:NamedIndividual ,
+                                         KaliLinuxTools:Task ;
+                                rdfs:label "AnalyzeArtifacts"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AnalyzeFileSystem
+KaliLinuxTools:AnalyzeFileSystem rdf:type owl:NamedIndividual ,
+                                          KaliLinuxTools:Task ;
+                                 rdfs:label "AnalyzeFileSystem"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AnalyzeFirmware
+KaliLinuxTools:AnalyzeFirmware rdf:type owl:NamedIndividual ,
+                                        KaliLinuxTools:Task ;
+                               rdfs:label "AnalyzeFirmware"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AnalyzeMemory
+KaliLinuxTools:AnalyzeMemory rdf:type owl:NamedIndividual ,
+                                      KaliLinuxTools:Task ;
+                             rdfs:label "AnalyzeMemory"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AnalyzeTraffic
+KaliLinuxTools:AnalyzeTraffic rdf:type owl:NamedIndividual ,
+                                       KaliLinuxTools:Task ;
+                              rdfs:label "AnalyzeTraffic"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Armitage
+KaliLinuxTools:Armitage rdf:type owl:NamedIndividual ,
+                                 KaliLinuxTools:ExploitationTool ;
+                        KaliLinuxTools:belongsToCategory KaliLinuxTools:ExploitationPassword ;
+                        KaliLinuxTools:isUsedFor KaliLinuxTools:ExploitVulneraability ;
+                        KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                        KaliLinuxTools:hasCommand "armitage" ;
+                        KaliLinuxTools:hasDescription "GUI front-end for Metasploit" ;
+                        KaliLinuxTools:hasEthicalNote "\"Coordinate attacks only in authorised test environments.\"" ;
+                        KaliLinuxTools:hasLegalNote "\"Team-based exploitation requires written client approval.\"" ;
+                        KaliLinuxTools:preferredPhase "Exploit / Post-Exploit" ;
+                        KaliLinuxTools:riskLevel "High" ;
+                        rdfs:comment "GUI front-end for Metasploit"@en ;
+                        rdfs:label "Armitage"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AttacksMITM
+KaliLinuxTools:AttacksMITM rdf:type owl:NamedIndividual ,
+                                    KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#AttacksVulnerability
+KaliLinuxTools:AttacksVulnerability rdf:type owl:NamedIndividual ,
+                                             KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Autopsy
+KaliLinuxTools:Autopsy rdf:type owl:NamedIndividual ,
+                                KaliLinuxTools:ForensicsTool ;
+                       KaliLinuxTools:belongsToCategory KaliLinuxTools:ScanningForensics ;
+                       KaliLinuxTools:isUsedFor KaliLinuxTools:AnalyzeArtifacts ;
+                       KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Beginner ;
+                       KaliLinuxTools:hasCommand "GUI-based forensic analysis platform" ,
+                                                 "autopsy" ;
+                       KaliLinuxTools:hasEthicalNote "hasEthicalNote: \"Limit analysis to evidence you are permitted to handle.\"" ;
+                       KaliLinuxTools:hasLegalNote "\"Ensure compliance with digital evidence handling regulations.\"" ;
+                       KaliLinuxTools:preferredPhase "Forensics" ;
+                       KaliLinuxTools:riskLevel "Medium" ;
+                       rdfs:comment "GUI-based forensic analysis platform"@en ;
+                       rdfs:label "Autopsy"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Beginner
+KaliLinuxTools:Beginner rdf:type owl:NamedIndividual ,
+                                 KaliLinuxTools:UserLevel ;
+                        rdfs:comment "Use this tool responsibly and only in authorized environments."@en ;
+                        rdfs:label "Beginner"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Binwalk
+KaliLinuxTools:Binwalk rdf:type owl:NamedIndividual ,
+                                KaliLinuxTools:ForensicsTool ;
+                       KaliLinuxTools:isUsedFor KaliLinuxTools:AnalyzeFirmware ;
+                       KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                       KaliLinuxTools:hasCommand "Firmware analysis tool" ,
+                                                 "binwalk firmware.bin" ;
+                       KaliLinuxTools:hasEthicalNote "\"Analyse only firmware images you are authorised to test.\"" ;
+                       KaliLinuxTools:hasLegalNote "\"Respect licensing and proprietary rights in firmware.\"" ;
+                       KaliLinuxTools:preferredPhase "Reverse Engineering" ;
+                       KaliLinuxTools:riskLevel "Low" ;
+                       rdfs:comment "Firmware analysis tool"@en ;
+                       rdfs:label "Binwalk"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#BurpSuite
+KaliLinuxTools:BurpSuite rdf:type owl:NamedIndividual ,
+                                  KaliLinuxTools:ExploitationTool ;
+                         KaliLinuxTools:belongsToCategory KaliLinuxTools:ExploitationWeb ;
+                         KaliLinuxTools:isUsedFor KaliLinuxTools:ExploitVulneraability ;
+                         KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Intermediate ;
+                         KaliLinuxTools:hasCommand "burpsuite" ;
+                         KaliLinuxTools:hasDescription "Web vulnerability scanner and proxy tool" ;
+                         KaliLinuxTools:hasEthicalNote "\"Intercept traffic only from authorised applications.\"" ;
+                         KaliLinuxTools:hasLegalNote "\"Unauthorised interception of HTTP/S traffic is unlawful.\"" ;
+                         KaliLinuxTools:preferredPhase "Vulnerability Analysis" ;
+                         KaliLinuxTools:riskLevel "Medium" ;
+                         rdfs:comment "Web vulnerability scanner and proxy tool"@en ;
+                         rdfs:label "BurpSuite"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#CrackPassWord
+KaliLinuxTools:CrackPassWord rdf:type owl:NamedIndividual ,
+                                      KaliLinuxTools:Task ;
+                             rdfs:label "CrackPassWord"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#CrackingPassword
+KaliLinuxTools:CrackingPassword rdf:type owl:NamedIndividual ,
+                                         KaliLinuxTools:Category ;
+                                rdfs:label "CrackingPassWord"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#CrackingWireless
+KaliLinuxTools:CrackingWireless rdf:type owl:NamedIndividual ,
+                                         KaliLinuxTools:Category ;
+                                rdfs:label "CrackingWireless"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Dradis
+KaliLinuxTools:Dradis rdf:type owl:NamedIndividual ,
+                               KaliLinuxTools:ReportingTool ;
+                      KaliLinuxTools:belongsToCategory KaliLinuxTools:InformationCollaboration ;
+                      KaliLinuxTools:isUsedFor KaliLinuxTools:ReportFindingTools ;
+                      KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Beginner ;
+                      KaliLinuxTools:hasCommand "dradis" ;
+                      KaliLinuxTools:hasDescription "Reporting and collaboration platform" ;
+                      KaliLinuxTools:hasEthicalNote "\"Share findings only within authorised teams.\"" ;
+                      KaliLinuxTools:hasLegalNote "\"Respect confidentiality agreements when reporting vulnerabilities.\"" ;
+                      KaliLinuxTools:preferredPhase "Reporting" ;
+                      KaliLinuxTools:riskLevel "Low" ;
+                      rdfs:comment "Reporting and collaboration platform"@en ;
+                      rdfs:label "Dradis"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Ettercap
+KaliLinuxTools:Ettercap rdf:type owl:NamedIndividual ,
+                                 KaliLinuxTools:SniffingSpoofingTool ;
+                        KaliLinuxTools:belongsToCategory KaliLinuxTools:ManInTheMiddle ;
+                        KaliLinuxTools:isUsedFor KaliLinuxTools:AnalyzeTraffic ;
+                        KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                        KaliLinuxTools:hasCommand "dradis" ;
+                        KaliLinuxTools:hasDescription "Reporting and collaboration platform" ;
+                        KaliLinuxTools:hasEthicalNote "\"Use only in controlled environments; MITM attacks affect all traffic.\"" ;
+                        KaliLinuxTools:hasLegalNote "\"Interception without consent is unlawful in most jurisdictions.\"" ;
+                        KaliLinuxTools:preferredPhase "Exploit (Network Manipulation)" ;
+                        KaliLinuxTools:riskLevel "High" ;
+                        rdfs:comment "MITM attacks and sniffing"@en ;
+                        rdfs:label "Ettercap"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitVulneraability
+KaliLinuxTools:ExploitVulneraability rdf:type owl:NamedIndividual ,
+                                              KaliLinuxTools:Task ;
+                                     rdfs:label "ExploitVulneraability"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Exploitation
+KaliLinuxTools:Exploitation rdf:type owl:NamedIndividual ,
+                                     KaliLinuxTools:Task ;
+                            rdfs:label "Exploitation"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationDatabase
+KaliLinuxTools:ExploitationDatabase rdf:type owl:NamedIndividual ,
+                                             KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationPassword
+KaliLinuxTools:ExploitationPassword rdf:type owl:NamedIndividual ,
+                                             KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationPayload
+KaliLinuxTools:ExploitationPayload rdf:type owl:NamedIndividual ,
+                                            KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ExploitationWeb
+KaliLinuxTools:ExploitationWeb rdf:type owl:NamedIndividual ,
+                                        KaliLinuxTools:Category ;
+                               rdfs:label "EploitationWeb"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#FiindExploits
+KaliLinuxTools:FiindExploits rdf:type owl:NamedIndividual ,
+                                      KaliLinuxTools:Task ;
+                             rdfs:label "FindExploits"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#GeneratePayload
+KaliLinuxTools:GeneratePayload rdf:type owl:NamedIndividual ,
+                                        KaliLinuxTools:Task ;
+                               rdfs:label "GeneratePayload"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Hashcat
+KaliLinuxTools:Hashcat rdf:type owl:NamedIndividual ,
+                                KaliLinuxTools:PasswordCrackingTool ;
+                       KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackPassWord ;
+                       KaliLinuxTools:isUsedFor KaliLinuxTools:CrackPassWord ;
+                       KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                       KaliLinuxTools:hasCommand "hashcat -m 0 -a 0 hashes.txt wordlist.txt" ;
+                       KaliLinuxTools:hasDescription "Advanced GPU-based password cracker" ;
+                       KaliLinuxTools:hasEthicalNote "\"Use only for recovering passwords on systems and data you are authorised to test or own.\"" ;
+                       KaliLinuxTools:hasLegalNote "\"Unlawful password cracking on external or unauthorised systems is a criminal offence." ;
+                       KaliLinuxTools:preferredPhase "Exploit (Password Cracking / Credential Recovery)" ;
+                       KaliLinuxTools:riskLevel "High" ;
+                       rdfs:comment "\"An advanced GPU/CPU-based password recovery utility supporting multiple algorithm\""@en ;
+                       rdfs:label "Hashcat"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Hydra
+KaliLinuxTools:Hydra rdf:type owl:NamedIndividual ,
+                              KaliLinuxTools:PasswordCrackingTool ;
+                     KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackingPassword ;
+                     KaliLinuxTools:isUsedFor KaliLinuxTools:CrackPassWord ;
+                     KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                     KaliLinuxTools:hasCommand "hydra -l admin -P rockyou.txt ssh://192.168.1.10" ;
+                     KaliLinuxTools:hasDescription "Performs dictionary attacks on logins" ;
+                     KaliLinuxTools:hasEthicalNote "\"Use brute-force testing only on systems and accounts you are authorised to assess.\"" ;
+                     KaliLinuxTools:hasLegalNote "\"Password cracking attempts without consent are unlawful.\"" ;
+                     KaliLinuxTools:preferredPhase "Exploit (Credential Testing)" ;
+                     KaliLinuxTools:riskLevel "High" ;
+                     rdfs:comment "\"A parallelised login cracker that supports numerous protocols including FTP, SSH\""@en ;
+                     rdfs:label "Hydra"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#InformationCollaboration
+KaliLinuxTools:InformationCollaboration rdf:type owl:NamedIndividual ,
+                                                 KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#InformationGathering
+KaliLinuxTools:InformationGathering rdf:type owl:NamedIndividual ,
+                                             KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Intermediate
+KaliLinuxTools:Intermediate rdf:type owl:NamedIndividual ,
+                                     KaliLinuxTools:UserLevel ;
+                            rdfs:comment "Use this tool responsibly and only in authorized environments." ;
+                            rdfs:label "Intermediate"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#JohnTheRipper
+KaliLinuxTools:JohnTheRipper rdf:type owl:NamedIndividual ,
+                                      KaliLinuxTools:PasswordCrackingTool ;
+                             KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackingPassword ;
+                             KaliLinuxTools:isUsedFor KaliLinuxTools:CrackPassWord ;
+                             KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                             KaliLinuxTools:hasCommand "john --wordlist=password.lst hash.txt" ;
+                             KaliLinuxTools:hasDescription "Fast password cracker" ;
+                             KaliLinuxTools:hasEthicalNote "\"Apply password cracking only on password hashes you are authorised to test.\"" ;
+                             KaliLinuxTools:hasLegalNote "\"Using password recovery on unauthorised systems or stolen data is illegal.\"" ;
+                             KaliLinuxTools:preferredPhase "Exploit (Password Cracking / Credential Testing)" ;
+                             KaliLinuxTools:riskLevel "High" ;
+                             rdfs:comment "\"A fast password-cracking tool that supports various hash formats including UNIX\""@en ;
+                             rdfs:label "JohnTheRipper"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Kismet
+KaliLinuxTools:Kismet rdf:type owl:NamedIndividual ,
+                               KaliLinuxTools:WirelessAttackTool ;
+                      KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackingWireless ;
+                      KaliLinuxTools:isUsedFor KaliLinuxTools:TestWiFiSecurity ;
+                      KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Intermediate ;
+                      KaliLinuxTools:hasCommand "kismet" ;
+                      KaliLinuxTools:hasDescription "Wireless network detector and sniffer" ;
+                      KaliLinuxTools:hasEthicalNote "\"Restrict wireless discovery to authorised ranges.\"" ;
+                      KaliLinuxTools:hasLegalNote "\"Passive detection of third-party networks may breach privacy laws.\"" ;
+                      KaliLinuxTools:preferredPhase "Recon (Wireless)" ;
+                      KaliLinuxTools:riskLevel "Medium" ;
+                      rdfs:comment "Wireless network detector and sniffer"@en ;
+                      rdfs:label "Kismet"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Lynis
+KaliLinuxTools:Lynis rdf:type owl:NamedIndividual ,
+                              KaliLinuxTools:VulnerabilityAnalysisTool ;
+                     KaliLinuxTools:belongsToCategory KaliLinuxTools:AttacksVulnerability ;
+                     KaliLinuxTools:isUsedFor KaliLinuxTools:ScanVulnerabilities ;
+                     KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                     KaliLinuxTools:hasCommand "lynis audit system" ;
+                     KaliLinuxTools:hasDescription "Security auditing tool" ;
+                     KaliLinuxTools:hasEthicalNote "\"Run only on systems you own or are authorised to audit.\"" ;
+                     KaliLinuxTools:hasLegalNote "\"Authorisation required before host hardening assessments.\"" ;
+                     KaliLinuxTools:preferredPhase "Recon / System Audit" ;
+                     KaliLinuxTools:riskLevel "Low" ;
+                     rdfs:comment "Security auditing tool"@en ;
+                     rdfs:label "Lynis"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#MITMf
+KaliLinuxTools:MITMf rdf:type owl:NamedIndividual ,
+                              KaliLinuxTools:SniffingSpoofingTool ;
+                     KaliLinuxTools:belongsToCategory KaliLinuxTools:AttacksMITM ;
+                     KaliLinuxTools:isUsedFor KaliLinuxTools:PerformMITMAttack ;
+                     KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                     KaliLinuxTools:hasCommand "mitmf --arp --spoof --gateway 192.168.1.1" ;
+                     KaliLinuxTools:hasDescription "Man-in-the-middle framework" ;
+                     KaliLinuxTools:hasEthicalNote "\"Limit testing to lab or authorised penetration tests.\"" ;
+                     KaliLinuxTools:hasLegalNote "\"Unauthorised use of man-in-the-middle frameworks is illegal.\"" ;
+                     KaliLinuxTools:preferredPhase "Exploit" ;
+                     KaliLinuxTools:riskLevel "High" ;
+                     rdfs:comment "MITM attack framework"@en ;
+                     rdfs:label "MITMf"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#MSFVenom
+KaliLinuxTools:MSFVenom rdf:type owl:NamedIndividual ,
+                                 KaliLinuxTools:ExploitationTool ;
+                        KaliLinuxTools:belongsToCategory KaliLinuxTools:ExploitationPayload ;
+                        KaliLinuxTools:isUsedFor KaliLinuxTools:GeneratePayload ;
+                        KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                        KaliLinuxTools:hasCommand "msfvenom -p windows/meterpreter/reverse_tcp LHOST=... -f exe > shell.exe" ;
+                        KaliLinuxTools:hasDescription "Payload generator" ;
+                        KaliLinuxTools:hasEthicalNote "\"Generate payloads strictly for controlled penetration tests.\"" ;
+                        KaliLinuxTools:hasLegalNote "\"Payload delivery without authorisation constitutes an offence.\"" ;
+                        KaliLinuxTools:preferredPhase "Exploit" ;
+                        KaliLinuxTools:riskLevel "High" ;
+                        rdfs:comment "Payload generation tool"@en ;
+                        rdfs:label "MSFVenom"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#MagicTree
+KaliLinuxTools:MagicTree rdf:type owl:NamedIndividual ,
+                                  KaliLinuxTools:ReportingTool ;
+                         KaliLinuxTools:belongsToCategory KaliLinuxTools:ReportCollaborationTool ;
+                         KaliLinuxTools:isUsedFor KaliLinuxTools:ReportFindingTools ;
+                         KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Beginner ;
+                         KaliLinuxTools:hasCommand "java -jar magictree.jar" ;
+                         KaliLinuxTools:hasDescription "Penetration testing data aggregation" ;
+                         KaliLinuxTools:hasEthicalNote "\"Aggregate results only from authorised sources.\"" ;
+                         KaliLinuxTools:hasLegalNote "\"Do not store or share results outside agreed scope.\"" ;
+                         KaliLinuxTools:preferredPhase "Reporting" ;
+                         KaliLinuxTools:riskLevel "Low" ;
+                         rdfs:comment "Pentesting data aggregation"@en ;
+                         rdfs:label "MagicTree"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ManInTheMiddle
+KaliLinuxTools:ManInTheMiddle rdf:type owl:NamedIndividual ,
+                                       KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Metasploit
+KaliLinuxTools:Metasploit rdf:type owl:NamedIndividual ,
+                                   KaliLinuxTools:ExploitationTool ;
+                          KaliLinuxTools:SuggestedToolChain KaliLinuxTools:sqlmap ;
+                          KaliLinuxTools:belongsToCategory KaliLinuxTools:ExploitationPassword ;
+                          KaliLinuxTools:isUsedFor KaliLinuxTools:ExploitVulneraability ;
+                          KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                          KaliLinuxTools:hasCommand "msfconsole" ;
+                          KaliLinuxTools:hasDescription "Comprehensive exploitation framework" ;
+                          KaliLinuxTools:hasEthicalNote "Framework use restricted to licensed and authorised testing.\"" ;
+                          KaliLinuxTools:hasLegalNote "\"Unlawful exploitation may breach criminal law.\"" ;
+                          KaliLinuxTools:preferredPhase "Exploit" ;
+                          KaliLinuxTools:riskLevel "High" ;
+                          rdfs:comment "Comprehensive exploitation framework"@en ;
+                          rdfs:label "Metasploit"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Netdiscover
+KaliLinuxTools:Netdiscover rdf:type owl:NamedIndividual ,
+                                    KaliLinuxTools:NetworkScanningTool ;
+                           KaliLinuxTools:belongsToCategory KaliLinuxTools:InformationGathering ;
+                           KaliLinuxTools:isUsedFor KaliLinuxTools:ScanNetwork ;
+                           KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                           KaliLinuxTools:hasCommand "netdiscover -r 192.168.1.0/24" ;
+                           KaliLinuxTools:hasDescription "Detects live hosts in a network" ;
+                           KaliLinuxTools:hasEthicalNote "\"Use only on authorised networks to avoid disruption.\"" ;
+                           KaliLinuxTools:hasLegalNote "\"ARP probing may raise IDS alerts; requires permission.\"" ;
+                           KaliLinuxTools:preferredPhase "Recon" ;
+                           KaliLinuxTools:riskLevel "Low" ;
+                           rdfs:comment "Discover live hosts in network"@en ;
+                           rdfs:label "Netdiscover"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Nikto
+KaliLinuxTools:Nikto rdf:type owl:NamedIndividual ,
+                              KaliLinuxTools:VulnerabilityAnalysisTool ;
+                     KaliLinuxTools:SuggestedToolChain KaliLinuxTools:OpenVAS ;
+                     KaliLinuxTools:belongsToCategory KaliLinuxTools:AttacksVulnerability ;
+                     KaliLinuxTools:isFollowedBy KaliLinuxTools:OpenVAS ;
+                     KaliLinuxTools:isUsedFor KaliLinuxTools:ScanVulnerabilities ;
+                     KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                     KaliLinuxTools:hasCommand "nikto -h http://target" ;
+                     KaliLinuxTools:hasDescription "Web server scanner for vulnerabilities" ;
+                     KaliLinuxTools:hasEthicalNote "\"Use strictly for authorised web application testing.\"" ;
+                     KaliLinuxTools:hasLegalNote "\"Avoid unauthorised scanning of third-party sites.\"" ;
+                     KaliLinuxTools:preferredPhase "Vulnerability Analysis" ;
+                     KaliLinuxTools:riskLevel "Medium" ;
+                     rdfs:comment "Web server scanner"@en ;
+                     rdfs:label "Nikto"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Nmap
+KaliLinuxTools:Nmap rdf:type owl:NamedIndividual ,
+                             KaliLinuxTools:NetworkScanningTool ;
+                    KaliLinuxTools:SuggestedToolChain KaliLinuxTools:Netdiscover ;
+                    KaliLinuxTools:belongsToCategory KaliLinuxTools:InformationGathering ;
+                    KaliLinuxTools:isFollowedBy KaliLinuxTools:Netdiscover ;
+                    KaliLinuxTools:isUsedFor KaliLinuxTools:PortScanner ;
+                    KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                    KaliLinuxTools:hasCommand "nmap -sS -T4 -A 192.168.1.1" ;
+                    KaliLinuxTools:hasDescription "Scans hosts and services on a network" ;
+                    KaliLinuxTools:hasEthicalNote "\"Authorised scopes only.\"" ;
+                    KaliLinuxTools:hasLegalNote "\"Network scanning without consent is unlawful.\"" ;
+                    KaliLinuxTools:preferredPhase "Recon / Scanning" ;
+                    KaliLinuxTools:riskLevel "Medium" ;
+                    rdfs:comment "Scan for open ports"@en ;
+                    rdfs:label "Nmap"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#OWASPZAP
+KaliLinuxTools:OWASPZAP rdf:type owl:NamedIndividual ,
+                                 KaliLinuxTools:ExploitationTool ;
+                        KaliLinuxTools:belongsToCategory KaliLinuxTools:ExploitationWeb ;
+                        KaliLinuxTools:isUsedFor KaliLinuxTools:ExploitVulneraability ;
+                        KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Intermediate ;
+                        KaliLinuxTools:hasCommand "zap.sh" ;
+                        KaliLinuxTools:hasDescription "Intercepting proxy for finding security vulnerabilities" ;
+                        KaliLinuxTools:hasEthicalNote "\"Run scans only within authorised web scopes.\"" ;
+                        KaliLinuxTools:hasLegalNote "\"Web fuzzing may cause denial of service; obtain consent first.\"" ;
+                        KaliLinuxTools:preferredPhase "Vulnerability Analysis" ;
+                        KaliLinuxTools:riskLevel "Medium" ;
+                        rdfs:comment "Web app security scanner"@en ;
+                        rdfs:label "OWASPZAP"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#OpenVAS
+KaliLinuxTools:OpenVAS rdf:type owl:NamedIndividual ,
+                                KaliLinuxTools:VulnerabilityAnalysisTool ;
+                       KaliLinuxTools:belongsToCategory KaliLinuxTools:AttacksVulnerability ;
+                       KaliLinuxTools:isFollowedBy KaliLinuxTools:Lynis ;
+                       KaliLinuxTools:isUsedFor KaliLinuxTools:ScanVulnerabilities ;
+                       KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                       KaliLinuxTools:hasCommand "Open source vulnerability scanner" ;
+                       KaliLinuxTools:hasDescription "openvas-start" ;
+                       KaliLinuxTools:hasEthicalNote "\"Perform scans only against authorised environments.\"" ;
+                       KaliLinuxTools:hasLegalNote "\"May trigger alerts; ensure written consent is obtained.\"" ;
+                       KaliLinuxTools:preferredPhase "Vulnerability Analysis" ;
+                       KaliLinuxTools:riskLevel "High" ;
+                       rdfs:comment "Vulnerability scanner"@en ;
+                       rdfs:label "OpenVAS"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#PerformMITMAttack
+KaliLinuxTools:PerformMITMAttack rdf:type owl:NamedIndividual ,
+                                          KaliLinuxTools:Task ;
+                                 rdfs:label "PerformMITMAttack"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#PortScanner
+KaliLinuxTools:PortScanner rdf:type owl:NamedIndividual ,
+                                    KaliLinuxTools:Task .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Reaver
+KaliLinuxTools:Reaver rdf:type owl:NamedIndividual ,
+                               KaliLinuxTools:WirelessAttackTool ;
+                      KaliLinuxTools:SuggestedToolChain KaliLinuxTools:Wifite ;
+                      KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackingWireless ;
+                      KaliLinuxTools:isFollowedBy KaliLinuxTools:Wifite ;
+                      KaliLinuxTools:isUsedFor KaliLinuxTools:TestWiFiSecurity ;
+                      KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                      KaliLinuxTools:hasCommand "reaver -i wlan0mon -b XX:XX:XX:XX:XX:XX -vv" ;
+                      KaliLinuxTools:hasDescription "Brute-force WPS PINs" ;
+                      KaliLinuxTools:hasEthicalNote "\"Test WPS vulnerabilities only on your own or client-approved networks.\"" ;
+                      KaliLinuxTools:hasLegalNote "\"Exploiting Wi-Fi vulnerabilities without consent is illegal.\"" ;
+                      KaliLinuxTools:preferredPhase "Exploit (Wireless)" ;
+                      KaliLinuxTools:riskLevel "High" ;
+                      rdfs:comment "Brute-force WPS PINs"@en ;
+                      rdfs:label "Reaver"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ReportCollaborationTool
+KaliLinuxTools:ReportCollaborationTool rdf:type owl:NamedIndividual ,
+                                                KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ReportFindingTools
+KaliLinuxTools:ReportFindingTools rdf:type owl:NamedIndividual ,
+                                           KaliLinuxTools:Task ;
+                                  rdfs:label "ReportFindingTools"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ScanNetwork
+KaliLinuxTools:ScanNetwork rdf:type owl:NamedIndividual ,
+                                    KaliLinuxTools:Task ;
+                           rdfs:label "find live hosts"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ScanVulnerabilities
+KaliLinuxTools:ScanVulnerabilities rdf:type owl:NamedIndividual ,
+                                            KaliLinuxTools:Task ;
+                                   rdfs:label "ScanVulnerabilities"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#ScanningForensics
+KaliLinuxTools:ScanningForensics rdf:type owl:NamedIndividual ,
+                                          KaliLinuxTools:Category .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Searchsploit
+KaliLinuxTools:Searchsploit rdf:type owl:NamedIndividual ,
+                                     KaliLinuxTools:ExploitationTool ;
+                            KaliLinuxTools:belongsToCategory KaliLinuxTools:ExploitationDatabase ;
+                            KaliLinuxTools:isUsedFor KaliLinuxTools:FiindExploits ;
+                            KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                            KaliLinuxTools:hasCommand "searchsploit apache" ;
+                            KaliLinuxTools:hasDescription "Searches exploit database locally" ;
+                            KaliLinuxTools:hasEthicalNote "\"Use exploits for research and authorised testing only.\"" ;
+                            KaliLinuxTools:hasLegalNote "\"Running unverified exploits on external systems is prohibited.\"" ;
+                            KaliLinuxTools:preferredPhase "Recon / Exploit Research" ;
+                            KaliLinuxTools:riskLevel "Medium" ;
+                            rdfs:comment "Offline exploit database search"@en ;
+                            rdfs:label "Searchsploit"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Tcpdump
+KaliLinuxTools:Tcpdump rdf:type owl:NamedIndividual ,
+                                KaliLinuxTools:SniffingSpoofingTool ;
+                       KaliLinuxTools:belongsToCategory KaliLinuxTools:ScanningForensics ;
+                       KaliLinuxTools:isUsedFor KaliLinuxTools:AnalyzeTraffic ;
+                       KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                       KaliLinuxTools:hasCommand "tcpdump -i eth0" ;
+                       KaliLinuxTools:hasDescription "Command-line packet analyzer" ;
+                       KaliLinuxTools:hasEthicalNote "\"Ensure explicit authorisation before capturing packets.\"" ;
+                       KaliLinuxTools:hasLegalNote "\"Traffic inspection may reveal sensitive data; follow data protection laws.\"" ;
+                       KaliLinuxTools:riskLevel "Medium" ,
+                                                "Recon" ;
+                       rdfs:label "Tcpdump"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#TestWiFiSecurity
+KaliLinuxTools:TestWiFiSecurity rdf:type owl:NamedIndividual ,
+                                         KaliLinuxTools:Task ;
+                                rdfs:label "TestWiFiSecurity"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Unicornscan
+KaliLinuxTools:Unicornscan rdf:type owl:NamedIndividual ,
+                                    KaliLinuxTools:NetworkScanningTool ;
+                           KaliLinuxTools:belongsToCategory KaliLinuxTools:InformationGathering ;
+                           KaliLinuxTools:isUsedFor KaliLinuxTools:ScanNetwork ;
+                           KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                           KaliLinuxTools:hasCommand "unicornscan -Iv 192.168.1.1:a" ;
+                           KaliLinuxTools:hasDescription "Asynchronous port scanner" ;
+                           KaliLinuxTools:hasEthicalNote "\"Limit high-speed scans to environments with explicit approval.\"" ;
+                           KaliLinuxTools:hasLegalNote "\"Aggressive scanning may disrupt services; legal scope must be defined.\"" ;
+                           KaliLinuxTools:preferredPhase "Recon / Scanning" ;
+                           KaliLinuxTools:riskLevel "High" ;
+                           rdfs:comment "Asynchronous port scanner"@en ;
+                           rdfs:label "Unicornscan"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Volatility
+KaliLinuxTools:Volatility rdf:type owl:NamedIndividual ,
+                                   KaliLinuxTools:ForensicsTool ;
+                          KaliLinuxTools:belongsToCategory KaliLinuxTools:ScanningForensics ;
+                          KaliLinuxTools:isUsedFor KaliLinuxTools:AnalyzeMemory ;
+                          KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                          KaliLinuxTools:hasCommand "volatility -f memdump.raw --profile=Win7SP1x64 pslist" ;
+                          KaliLinuxTools:hasDescription "RAM analysis framework" ;
+                          KaliLinuxTools:hasEthicalNote "\"Use memory forensics only on authorised disk images.\"" ;
+                          KaliLinuxTools:hasLegalNote "\"May expose sensitive personal data; follow privacy regulations.\"" ;
+                          KaliLinuxTools:preferredPhase "Forensics" ;
+                          KaliLinuxTools:riskLevel "Medium" ;
+                          rdfs:comment "RAM analysis framework"@en ;
+                          rdfs:label "Volatility"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Wifite
+KaliLinuxTools:Wifite rdf:type owl:NamedIndividual ,
+                               KaliLinuxTools:WirelessAttackTool ;
+                      KaliLinuxTools:belongsToCategory KaliLinuxTools:CrackingWireless ;
+                      KaliLinuxTools:isUsedFor KaliLinuxTools:TestWiFiSecurity ;
+                      KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                      KaliLinuxTools:hasCommand "wifite" ;
+                      KaliLinuxTools:hasDescription "Automated wireless attack tool" ;
+                      KaliLinuxTools:hasEthicalNote "\"Automated Wi-Fi attacks must be limited to authorised testing.\"" ;
+                      KaliLinuxTools:hasLegalNote "\"Illegal to target wireless access points without explicit approval.\"" ;
+                      KaliLinuxTools:preferredPhase "Exploit (Wireless)" ;
+                      KaliLinuxTools:riskLevel "High" ;
+                      rdfs:comment "Automated wireless attack tool"@en ;
+                      rdfs:label "Wifite"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Wireshark
+KaliLinuxTools:Wireshark rdf:type owl:NamedIndividual ,
+                                  KaliLinuxTools:SniffingSpoofingTool ;
+                         KaliLinuxTools:SuggestedToolChain KaliLinuxTools:Tcpdump ;
+                         KaliLinuxTools:belongsToCategory KaliLinuxTools:ScanningForensics ;
+                         KaliLinuxTools:isFollowedBy KaliLinuxTools:Tcpdump ;
+                         KaliLinuxTools:isUsedFor KaliLinuxTools:AnalyzeTraffic ;
+                         KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Beginner ;
+                         KaliLinuxTools:hasCommand "wireshark" ;
+                         KaliLinuxTools:hasDescription "GUI packet analyzer" ;
+                         KaliLinuxTools:hasEthicalNote "\"Capture traffic only on networks you are authorised to monitor.\"" ;
+                         KaliLinuxTools:hasLegalNote "\"Packet capture may expose personal data; ensure legal clearance.\"" ;
+                         KaliLinuxTools:preferredPhase "Recon / Network Analysis" ;
+                         KaliLinuxTools:riskLevel "Medium" ;
+                         rdfs:comment "GUI packet analyzer"@en ;
+                         rdfs:label "Wireshark"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#Zenmap
+KaliLinuxTools:Zenmap rdf:type owl:NamedIndividual ,
+                               KaliLinuxTools:NetworkScanningTool ;
+                      KaliLinuxTools:belongsToCategory KaliLinuxTools:InformationGathering ;
+                      KaliLinuxTools:isUsedFor KaliLinuxTools:PortScanner ;
+                      KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Beginner ;
+                      KaliLinuxTools:hasCommand "zenmap" ;
+                      KaliLinuxTools:hasDescription "Nmap's graphical user interface" ;
+                      KaliLinuxTools:hasEthicalNote "\"GUI scans must remain within authorised targets.\"" ;
+                      KaliLinuxTools:hasLegalNote "\"Visualised scans still constitute network probing; consent required.\"" ;
+                      KaliLinuxTools:preferredPhase "Recon / Scanning" ;
+                      KaliLinuxTools:riskLevel "Medium" ;
+                      rdfs:comment "GUI frontend for Nmap"@en ;
+                      rdfs:label "Zenmap"@en .
+
+
+###  http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#sqlmap
+KaliLinuxTools:sqlmap rdf:type owl:NamedIndividual ,
+                               KaliLinuxTools:ExploitationTool ;
+                      KaliLinuxTools:SuggestedToolChain KaliLinuxTools:Armitage ;
+                      KaliLinuxTools:belongsToCategory KaliLinuxTools:ExploitationPassword ;
+                      KaliLinuxTools:isUsedFor KaliLinuxTools:ExploitVulneraability ;
+                      KaliLinuxTools:requiresSkillLevel KaliLinuxTools:Advanced ;
+                      KaliLinuxTools:hasCommand "sqlmap -u 'http://site.com' --dbs" ;
+                      KaliLinuxTools:hasDescription "Automates SQL injection exploitation" ;
+                      KaliLinuxTools:hasEthicalNote "\"Exploit SQL vulnerabilities only on systems with explicit approval.\"" ;
+                      KaliLinuxTools:hasLegalNote "\"Database injection on unauthorised sites is illegal.\"" ;
+                      KaliLinuxTools:preferredPhase "Exploit" ;
+                      KaliLinuxTools:riskLevel "High" ;
+                      rdfs:comment "Automates SQL injection exploitation"@en ;
+                      rdfs:label "sqlmap"@en .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+KaliLinuxTools:AttacksMITM rdfs:label "AttacksMiTM"@en .
+
+
+KaliLinuxTools:AttacksVulnerability rdfs:label "AttacksVulnerability"@en .
+
+
+KaliLinuxTools:ExploitationDatabase rdfs:label "ExploitationDatabase"@en .
+
+
+KaliLinuxTools:ExploitationPassword rdfs:label "ExploitationPassword"@en .
+
+
+KaliLinuxTools:ExploitationPayload rdfs:label "ExploitationPayload"@en .
+
+
+KaliLinuxTools:InformationCollaboration rdfs:label "InformationCollaboration"@en .
+
+
+KaliLinuxTools:InformationGathering rdfs:label "InformationGathering"@en .
+
+
+KaliLinuxTools:ManInTheMiddle rdfs:label "ManInTheMiddle"@en .
+
+
+KaliLinuxTools:PortScanner rdfs:comment "Use this tool responsibly and only in authorized environments."@en ;
+                           rdfs:label "PortScanner"@en .
+
+
+KaliLinuxTools:ReportCollaborationTool rdfs:label "ReportCollaborationTool"@en .
+
+
+KaliLinuxTools:ScanningForensics rdfs:label "ScanningForensics"@en .
+
+
+owl:Thing rdfs:comment "A SEMANTICALLY DEVELOPED KNOWLEDGE-BASED SYSTEM FOR DEPLOYING KALI LINUX TOOLS’’" .
+
+
+owl:topObjectProperty rdfs:comment "Object properties define the relationships between tools, tasks, categories, and user levels, forming the reasoning backbone of the ontology"@en .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<http://www.semanticweb.org/milli/ontologies/2025/6/t> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+<http://www.semanticweb.org/milli/ontologies/2025/6/cmd> rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+KaliLinuxTools:t rdf:type <http://www.w3.org/2003/11/swrl#Variable> .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "CrackPassword" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:CrackingPassword
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:CrackPassword ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ScanningForensics" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:ScanningForensics
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:ScanningForensics ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "PortScanner" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:isUsedFor ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:PortScanner
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:SuggestedTool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "advancedTools" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:requiresSkillLevel ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:Advanced
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:AdvancedTool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "BeginnerTool" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:requiresSkillLevel ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:Beginner
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:BeginnerTool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ExploitWebApplication" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:ExploitationWeb
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:ExploitWebApplication ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "Intermediate Tool" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:requiresSkillLevel ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:Intermediate
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:IntermidiateTool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "S1" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#DatavaluedPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:hasCommand ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> <http://www.semanticweb.org/milli/ontologies/2025/6/cmd>
+                                                                ] ;
+                                                      rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                                 rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#BuiltinAtom> ;
+                                                                             <http://www.w3.org/2003/11/swrl#builtin> <http://www.w3.org/2003/11/swrlb#contains> ;
+                                                                             <http://www.w3.org/2003/11/swrl#arguments> [ rdf:type rdf:List ;
+                                                                                                                          rdf:first <http://www.semanticweb.org/milli/ontologies/2025/6/cmd> ;
+                                                                                                                          rdf:rest [ rdf:type rdf:List ;
+                                                                                                                                     rdf:first "nmap" ;
+                                                                                                                                     rdf:rest rdf:nil
+                                                                                                                                   ]
+                                                                                                                        ]
+                                                                           ] ;
+                                                                 rdf:rest rdf:nil
+                                                               ]
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:PortScanner ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "AttacksMITM" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:AttacksMITM
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:AttacksMITM ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "AttacksVulnerability" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:AttacksVulnerability
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:AttacksVulnerability ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ExploitationDatabase" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:ExploitationDatabase
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:ExploitationDatabase ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ExploitationPassword" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:ExploitationPassword
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:ExploitationPassword ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ExploitationPayload" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:ExploitationPayload
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:ExploitationPayload ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "InformationCollaboration" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:InformationCollaboration
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:InformationCollaboration ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "CrackWireless" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t> ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:CrackingWireless
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:CrackWireless ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> <http://www.semanticweb.org/milli/ontologies/2025/6/t>
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "InformationGathering" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:InformationGathering
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:InformationGathering ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ManInTheMiddle" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:ManInTheMiddle
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:ManInTheMiddle ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+[ <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled> "true"^^xsd:boolean ;
+   rdfs:comment "" ;
+   rdfs:label "ReportCollaborationTool" ;
+   rdf:type <http://www.w3.org/2003/11/swrl#Imp> ;
+   <http://www.w3.org/2003/11/swrl#body> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:Tool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                                      rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#IndividualPropertyAtom> ;
+                                                                  <http://www.w3.org/2003/11/swrl#propertyPredicate> KaliLinuxTools:belongsToCategory ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t ;
+                                                                  <http://www.w3.org/2003/11/swrl#argument2> KaliLinuxTools:ReportCollaborationTool
+                                                                ] ;
+                                                      rdf:rest rdf:nil
+                                                    ]
+                                         ] ;
+   <http://www.w3.org/2003/11/swrl#head> [ rdf:type <http://www.w3.org/2003/11/swrl#AtomList> ;
+                                           rdf:first [ rdf:type <http://www.w3.org/2003/11/swrl#ClassAtom> ;
+                                                       <http://www.w3.org/2003/11/swrl#classPredicate> KaliLinuxTools:ReportCollaborationTool ;
+                                                       <http://www.w3.org/2003/11/swrl#argument1> KaliLinuxTools:t
+                                                     ] ;
+                                           rdf:rest rdf:nil
+                                         ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
