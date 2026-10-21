@@ -1,0 +1,8 @@
+
+PREFIX kali: <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#>
+
+SELECT DISTINCT ?startTool ?reachableTool
+WHERE {
+    ?startTool kali:isFollowedBy+ ?reachableTool .
+}
+ORDER BY ?startTool ?reachableTool
