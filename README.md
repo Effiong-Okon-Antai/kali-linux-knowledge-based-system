@@ -45,12 +45,11 @@ This research investigates how semantic knowledge representation and reasoning c
 - Evaluate the system through functional testing, reasoning checks and user feedback.
 - Identify limitations and opportunities for further development.
 
-- 
+---
+
 ## Research Ontology Versions
 
-This repository preserves two versions of the OWL ontology developed for the research project:
-
-**A Semantically Developed Knowledge-Based System for Deploying Kali Linux Tools**
+This repository preserves two versions of the OWL ontology developed for the research project.
 
 ### 2025 — Original MSc Research Ontology
 
@@ -59,6 +58,7 @@ This repository preserves two versions of the OWL ontology developed for the res
 This is the original ontology developed as part of my MSc Cybersecurity research at Nottingham Trent University in 2025.
 
 It models:
+
 - Kali Linux cybersecurity tools
 - Cybersecurity tasks
 - User skill levels
@@ -75,26 +75,28 @@ This version preserves the original research model.
 This version contains inferred assertions transferred into the ontology following additional validation in Protégé using SWRLTab and the Drools rule engine in October 2026.
 
 The validation reported:
+
 - 18 SWRL rules exported
 - 31 OWL classes exported
 - 63 OWL individuals exported
-- 477 inferred axioms
+- 522 OWL axioms exported
+- 477 inferred axioms reported
 - Successful inference transfer into the OWL model
 
-This version demonstrates the results of rule-based semantic reasoning.
+The inferred axiom count is the rule engine's reported inference output, not the number of distinct tool recommendations.
 
 ### SPARQL Query Validation
 
-The four documented SPARQL queries are available in the [queries folder](queries/).
+Four documented SPARQL queries are available in the [queries folder](queries/).
 
 They demonstrate:
-1. Password-cracking tool retrieval
-2. Skill-level filtering
-3. SWRL-based suggested-tool classifications
-4. Tool-sequencing relationships
+
+1. Password-cracking tool retrieval.
+2. Skill-level filtering.
+3. SWRL-based suggested-tool classifications.
+4. Tool-sequencing relationships.
 
 The original research was completed in 2025, while additional query verification and documentation were carried out in October 2026.
-
 
 ---
 
@@ -110,7 +112,7 @@ The original research was completed in 2025, while additional query verification
 | SPARQL | Querying cybersecurity tools and their relationships |
 | Description Logic | Class-based reasoning and ontology queries |
 | OntoGraf | Visualisation of ontology relationships |
-| Drools | Rule engine available through the SWRLTab interface |
+| Drools | Rule execution through the SWRLTab interface |
 
 The project combines ontology modelling, rule-based reasoning and semantic querying to support cybersecurity tool recommendations.
 
@@ -189,7 +191,7 @@ The original ontology includes:
 | `belongsToCategory` | Links tools to their categories |
 | `requiresSkillLevel` | Associates tools with user experience levels |
 | `isFollowedBy` | Represents possible tool workflow sequences |
-| `SuggestedToolChain` | An additional object property defined in the original ontology |
+| `SuggestedToolChain` | Additional object property defined in the original ontology |
 
 The precise use of `SuggestedToolChain` can be examined through the ontology's property assertions.
 
@@ -303,7 +305,7 @@ The original Protégé SPARQL screenshots demonstrate that the ontology retrieve
 3. SPARQL retrieves matching tools and their available information.
 4. The results provide structured guidance for selecting tools relevant to the task.
 
-The original query demonstrates task-based retrieval. Skill-level filtering is a separate capability and should be verified through an appropriate skill-level query.
+The original query demonstrates task-based retrieval. Skill-level filtering is a separate capability.
 
 ### Original SPARQL Query
 
@@ -369,9 +371,34 @@ The MSc project used Pellet for ontology reasoning.
 
 The original Protégé screenshots also show the Drools rule engine interface in SWRLTab.
 
-OWL reasoning and SWRL rule execution are related but distinct processes. The presence of enabled SWRL rules and an active reasoner does not, by itself, demonstrate that every rule was executed successfully.
+OWL reasoning and SWRL rule execution are related but distinct processes.
 
-Further reproducibility testing can document these results separately.
+### October 2026 SWRL Validation
+
+Additional rule execution was performed using SWRLTab and Drools.
+
+The recorded results included:
+
+| Measurement | Result |
+|---|---|
+| SWRL rules exported | 18 |
+| OWL classes exported | 31 |
+| OWL individuals exported | 63 |
+| Object property declarations | 5 |
+| Data property declarations | 7 |
+| OWL axioms exported | 522 |
+| Inferred axioms reported | 477 |
+| Reported execution time | 464 ms |
+
+Following rule execution, inferred assertions were transferred into a separate OWL model.
+
+The resulting ontology was saved as:
+
+[kali_linux_tool_recommendation_inferred.owl](kali_linux_tool_recommendation_inferred.owl)
+
+Subsequent SPARQL testing successfully retrieved inferred recommendation classifications.
+
+This provides evidence of functional SWRL execution and semantic query retrieval in the tested environment.
 
 ---
 
@@ -399,9 +426,95 @@ Exploring asserted and inferred recommendation-related knowledge.
 
 Checking whether retrieved results match expected ontology relationships.
 
-The repository includes screenshots of the original DL and SPARQL query demonstrations.
+### Verified SPARQL Queries — October 2026
 
-Executable SPARQL query files may be added separately to support independent reproduction of the research.
+Four SPARQL queries have been documented and tested in Protégé.
+
+#### 1. Password-Cracking Tool Retrieval
+
+**Query:** [password_cracking.rq](queries/password_cracking.rq)
+
+**Verified Results:**
+
+- Hashcat
+- Hydra
+- JohnTheRipper
+
+**Status:** PASS — 3 tools retrieved.
+
+The task-based retrieval is also supported by original MSc research screenshots.
+
+#### 2. Skill-Level Filtering
+
+**Query:** [skill_level_filtering.rq](queries/skill_level_filtering.rq)
+
+**Verified Results:**
+
+- BurpSuite
+- Kismet
+- OWASPZAP
+
+**Status:** PASS — 3 Intermediate-level tools retrieved in Protégé on 21 October 2026.
+
+#### 3. SWRL-Based Suggested Tool Classifications
+
+**Query:** [suggested_tools.rq](queries/suggested_tools.rq)
+
+SWRL rules were executed using the Drools rule engine in Protégé, and inferred assertions were transferred into the OWL model before running the query.
+
+**Validation Observations:**
+
+- 18 SWRL rules exported.
+- 31 OWL classes and 63 OWL individuals exported.
+- 522 OWL axioms exported.
+- 477 inferred axioms reported.
+- Inference transfer into OWL completed successfully.
+
+Examples of retrieved classifications include:
+
+| Tool | Inferred Classification |
+|---|---|
+| Hydra | CrackPassword |
+| JohnTheRipper | CrackPassword |
+| Nikto | AttacksVulnerability |
+| OpenVAS | AttacksVulnerability |
+| Lynis | AttacksVulnerability |
+| BurpSuite | ExploitWebApplication |
+| MITMf | AttacksMiTM |
+| Kismet | CrackWireless |
+| Reaver | CrackWireless |
+| Wifite | CrackWireless |
+
+**Status:** PASS — inferred tool classifications successfully retrieved.
+
+#### 4. Tool-Sequencing Relationships
+
+**Query:** [tool_sequencing.rq](queries/tool_sequencing.rq)
+
+The query retrieves relationships modelled using the `isFollowedBy` object property.
+
+**Verified Results:**
+
+| First Tool | Next Tool |
+|---|---|
+| Aircracking | Airmonng |
+| Nikto | OpenVAS |
+| Nmap | Netdiscover |
+| OpenVAS | Lynis |
+| Reaver | Wifite |
+| Wireshark | Tcpdump |
+
+**Status:** PASS — 6 relationships retrieved in Protégé on 21 October 2026.
+
+These are relationships represented in the ontology, not independently validated optimal execution sequences.
+
+### Query Files and Reproducibility
+
+The complete query files, procedures, results and limitations are documented in the [queries README](queries/README.md).
+
+The [original research ontology](kali_linux_tool_recommendation_ontology.owl) preserves the MSc implementation.
+
+The [inferred ontology](kali_linux_tool_recommendation_inferred.owl) is a separate model containing assertions transferred after the 2026 SWRL validation.
 
 ---
 
@@ -447,9 +560,9 @@ The evaluation involved a small group and does not constitute large-scale indepe
 1. Download or clone this GitHub repository.
 2. Open Protégé Desktop.
 3. Select **File → Open**.
-4. Open the ontology file:
+4. Open the original ontology:
 
-   [`kali_linux_tool_recommendation_ontology.owl`](./kali_linux_tool_recommendation_ontology.owl)
+   [kali_linux_tool_recommendation_ontology.owl](kali_linux_tool_recommendation_ontology.owl)
 
 5. Inspect the **Classes** tab to explore the ontology hierarchy.
 6. Inspect **Object properties** and **Data properties**.
@@ -457,7 +570,9 @@ The evaluation involved a small group and does not constitute large-scale indepe
 8. Inspect the **SWRLTab** to review the reasoning rules.
 9. Configure a compatible reasoner to examine consistency and inferred relationships.
 10. Use **DL Query** or a compatible **SPARQL Query** interface to reproduce the research examples.
-11. Compare the results with the original dissertation and screenshots.
+11. Open a query from the [queries folder](queries/) and execute it in the SPARQL interface.
+12. To reproduce inferred classifications, run the SWRL rules and transfer inferred assertions into a separate working copy of the ontology, or inspect the saved [2026 inferred ontology](kali_linux_tool_recommendation_inferred.owl).
+13. Compare the results with the original dissertation, screenshots and October 2026 validation documentation.
 
 The ontology file may use Turtle serialisation despite its `.owl` extension. Select RDF/Turtle if your software does not detect the format automatically.
 
@@ -487,9 +602,11 @@ A research prototype designed to help learners understand cybersecurity tool sel
 
 ### Research Reproducibility
 
-The ontology, dissertation and original implementation screenshots provide artefacts that can support further testing and independent examination.
+The original ontology, dissertation and implementation screenshots, together with the separate 2026 inferred ontology and documented SPARQL queries, provide artefacts that can support further testing and independent examination.
 
-These contributions are demonstrated within the scope of the MSc research project. Broader claims of research novelty, independent recognition or industry impact require additional evidence.
+These contributions are demonstrated within the scope of the MSc research project.
+
+Broader claims of research novelty, independent recognition or industry impact require additional evidence.
 
 ---
 
@@ -516,7 +633,7 @@ The original research identifies several limitations:
 - No standalone production web interface or API was developed.
 - User feedback involved a small exploratory group.
 - Further independent testing is required to establish broader reliability.
-- Full SWRL rule execution and inference reproducibility require additional verification.
+- The October 2026 SWRL execution and query results provide functional validation, but broader independent reproducibility and accuracy evaluation remain necessary.
 
 ---
 
@@ -541,17 +658,23 @@ Potential improvements include:
 The repository contains:
 
 - The original MSc Cybersecurity dissertation.
-- The OWL ontology artefact.
-- Screenshots of ontology classes and relationships.
-- Screenshots of cybersecurity tasks and categories.
-- User-level classification screenshots.
-- Object and data property documentation.
-- OntoGraf visualisations.
-- SWRL rule demonstrations.
-- DL and SPARQL query screenshots.
-- Query outputs and supporting implementation evidence.
+- The original 2025 OWL research ontology.
+- A separate 2026 OWL ontology containing transferred SWRL inferences.
+- Four documented SPARQL query files in the [queries folder](queries/).
+- Screenshots of ontology classes, relationships, cybersecurity tasks and categories.
+- User-level classification and object/data property documentation.
+- OntoGraf visualisations, SWRL demonstrations and DL/SPARQL query screenshots.
+- Original research evidence and additional 2026 validation results.
 
-**Ontology File:** [`kali_linux_tool_recommendation_ontology.owl`](./kali_linux_tool_recommendation_ontology.owl)
+### Main Research Files
+
+**2025 Original Ontology:** [kali_linux_tool_recommendation_ontology.owl](kali_linux_tool_recommendation_ontology.owl)
+
+**2026 Inferred Ontology:** [kali_linux_tool_recommendation_inferred.owl](kali_linux_tool_recommendation_inferred.owl)
+
+**SPARQL Query Files:** [queries/](queries/)
+
+**Detailed Query Documentation:** [queries/README.md](queries/README.md)
 
 **GitHub Repository:** https://github.com/Effiong-Okon-Antai/kali-linux-knowledge-based-system
 
@@ -559,9 +682,9 @@ The repository contains:
 
 ## 18. Research Status and Acknowledgement
 
-**Research Status:** Completed MSc research prototype (2025), with further technical validation and development opportunities.
+**Research Status:** Completed MSc research prototype (2025), with additional SWRL inference and SPARQL query validation documented in October 2026.
 
-The repository documents the original research implementation and provides a foundation for reproducibility and future development.
+The repository documents the original research implementation and distinguishes it from additional 2026 technical verification, providing a foundation for reproducibility and future development.
 
 The project is not presented as a commercially deployed or independently certified cybersecurity product.
 
