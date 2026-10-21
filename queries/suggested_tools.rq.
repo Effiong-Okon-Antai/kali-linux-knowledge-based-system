@@ -1,0 +1,15 @@
+
+PREFIX kali: <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?tool ?recommendationClass ?label
+WHERE {
+  ?recommendationClass rdfs:subClassOf kali:SuggestedTool .
+  ?tool rdf:type ?recommendationClass .
+
+  OPTIONAL {
+    ?tool rdfs:label ?label .
+  }
+}
+ORDER BY ?recommendationClass ?label
