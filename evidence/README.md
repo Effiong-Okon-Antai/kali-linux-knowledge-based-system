@@ -1,49 +1,27 @@
 
-# Research Validation Evidence
+### Research Validation Evidence
 
-## Project
+This repository includes documented screenshots demonstrating the execution and verification of five SPARQL queries and SWRL reasoning using Protégé.
 
-A Semantically Developed Knowledge-Based System for Deploying Kali Linux Tools
+The validation evidence covers:
 
-**Researcher:** Effiong Okon Antai  
-**Original MSc Research:** 2025  
-**Additional Technical Validation:** October 2026
+- Password-cracking tool retrieval — 3 tools returned.
+- Skill-level filtering — 3 Intermediate-level tools returned.
+- SWRL-based suggested-tool classifications.
+- Direct tool-sequencing relationships — 6 relationships retrieved.
+- Direct and indirect tool reachability — 7 reachable pairs retrieved.
+- SWRL Drools rule execution and inference transfer — 477 inferred axioms reported.
 
-## Purpose
+### View Validation Screenshots
 
-This folder contains screenshots documenting ontology development, semantic reasoning and SPARQL query validation performed in Protégé.
+**[View All Research Validation Evidence and Screenshots](evidence/README.md)**
 
-The evidence supports examination and reproduction of the research prototype.
+The evidence folder contains six screenshots documenting the observed results within Protégé.
 
-## Verified SPARQL Tests
+### Research Timeline
 
-| Test | Result | Status |
-|---|---|---|
-| Password-Cracking Retrieval | 3 tools | PASS |
-| Skill-Level Filtering | 3 tools | PASS |
-| Suggested-Tool Classification | SWRL-derived classifications retrieved | PASS |
-| Tool Sequencing | 6 direct relationships | PASS |
-| Tool Reachability | 7 reachable pairs | PASS |
+**2025:** Original MSc Cybersecurity research, ontology development and evaluation at Nottingham Trent University.
 
-## SWRL Reasoning Validation
+**October 2026:** Additional SWRL reasoning validation, SPARQL query verification and research documentation.
 
-Additional testing using SWRLTab and Drools reported:
-
-- 18 SWRL rules exported
-- 31 OWL classes
-- 63 OWL individuals
-- 522 OWL axioms exported
-- 477 inferred axioms
-- Successful transfer of inferred assertions
-
-## Evidence Provenance
-
-The original ontology and MSc research were completed in 2025.
-
-Additional SWRL and SPARQL validation was performed in October 2026.
-
-Screenshots document observed results within the Protégé research environment and do not constitute independent production certification.
-
-## Research Repository
-
-[Return to Main README](../README.md)
+The additional validation supports reproducibility and technical examination of the research prototype. It does not constitute independent production certification.
