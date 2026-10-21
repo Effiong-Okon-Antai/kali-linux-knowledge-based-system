@@ -8,7 +8,7 @@
 **Programme:** MSc Cybersecurity  
 **Institution:** Nottingham Trent University, United Kingdom  
 **Research Supervisor:** Dr Richard Otuka  
-**Completed:** August 2025
+**Completed:** September 2025
 
 This research project presents the design, development and evaluation of an ontology-based Knowledge-Based System (KBS) for recommending Kali Linux cybersecurity tools according to user-defined tasks, experience levels and tool relationships.
 
