@@ -1,311 +1,181 @@
-# Kali Linux Knowledge-Based System for Intelligent Tool Recommendation
+Kali Linux Knowledge-Based System for Intelligent Tool Recommendation
+Research Overview
+Research title: A Semantically Developed Knowledge-Based System for Deploying Kali Linux Tools
+Researcher: Effiong Okon Antai
+Programme: MSc Cybersecurity
+Institution: Nottingham Trent University, United Kingdom
+Supervisor: Dr Richard Otuka
+Completed: August 2025
 
-## Research Overview
+This project documents an ontology-based knowledge-based system (KBS) developed to recommend Kali Linux cybersecurity tools according to cybersecurity tasks, tool relationships and user skill levels. It uses Semantic Web technologies to represent tool knowledge and support task-based retrieval and reasoning within a Protégé research prototype.
 
-**Research Title:** A Semantically Developed Knowledge-Based System for Deploying Kali Linux Tools
+The project is intended for cybersecurity education, research and authorised security testing. It is not a deployed standalone application. The UserLevel class in the original ontology also carries an rdfs:comment stating that the ontology and taxonomy are intended strictly for lawful penetration testing and cybersecurity training in authorised environments.
+1. Research Problem
+Kali Linux contains many tools for network analysis, penetration testing, vulnerability assessment and digital forensics. Learners and practitioners can find it difficult to identify appropriate tools and understand how tools relate to tasks or to one another.
 
-**Researcher:** Effiong Okon Antai  
-**Programme:** MSc Cybersecurity  
-**Institution:** Nottingham Trent University, United Kingdom  
-**Research Supervisor:** Dr Richard Otuka  
-**Completed:** August 2025
+This research investigates whether structured ontology modelling, semantic queries and rules can provide more systematic tool-selection guidance than a simple static tool list.
+2. Aim and Objectives
+Aim: Design and evaluate a knowledge-based system that supports the selection of Kali Linux tools for defined cybersecurity tasks.
 
-This research project presents the design, development and evaluation of an ontology-based knowledge-based system (KBS) for recommending Kali Linux cybersecurity tools according to user-defined tasks, experience levels and tool relationships.
+Objectives:
+- Represent tools, tasks, categories and user levels in an ontology.
+- Model relationships between tools and cybersecurity activities.
+- Define semantic rules supporting tool classification and recommendation.
+- Retrieve tool information through Description Logic (DL) and SPARQL queries.
+- Test task-based retrieval, skill-level filtering and tool relationships.
+- Assess the prototype's usefulness and identify its limitations.
+3. Technologies Used
+Technology	Role in the project
+Protégé	Ontology authoring and inspection
+OWL 2 / RDF	Semantic knowledge representation
+SWRL	Rule definitions for classification and inference
+Pellet	Reasoning used in the original research
+SPARQL	Retrieval of tools and their properties
+Description Logic	Class-based ontology queries
+OntoGraf	Visualisation of ontology relationships
 
-The system uses Semantic Web technologies to organise cybersecurity knowledge and support reasoning-based tool recommendations.
 
-It is intended primarily for cybersecurity students, learners, penetration testers and researchers working in authorised testing environments.
+4. Ontology Design and System Architecture
+Core classes
+The top-level classes visible in the original Protégé screenshots are:
+- Tool
+- Task
+- Category
+- UserLevel
+- SuggestedTool
+Class hierarchy shown in Protégé
+The screenshots also show the following subclasses:
+- Under Tool: ExploitationTool, ForensicsTool, NetworkScanningTool, PasswordCrackingTool, ReportingTool, SniffingSpoofingTool, VulnerabilityAnalysisTool and WirelessAttackTool.
+- Under UserLevel: AdvancedTool, BeginnerTool and IntermediateTool.
+- Under SuggestedTool: task-oriented recommendation classes such as CrackPassword, CrackWireless, InformationGathering, PortScanner, ScanningForensics, ExploitWebApplication and ReportCollaborationTool.
+These names reflect the original ontology hierarchy as shown, including its unconventional placement of the tool-level subclasses beneath UserLevel. They have not been silently reorganised.
+Object properties
+The original Protégé object-property hierarchy shows:
+- belongsToCategory — relates tools to categories.
+- isFollowedBy — describes a possible tool sequence.
+- isUsedFor — relates tools to tasks.
+- requiresSkillLevel — relates tools to skill levels.
+- SuggestedToolChain — an object property present in the original ontology; its exact usage should be inspected in the ontology before drawing further conclusions.
+Data properties
+The original Protégé data-property screenshot shows:
+- hasCommand — stores example command text.
+- hasDescription — stores descriptive information.
+Represented individuals
+The UserLevel class has three visible individuals: Beginner, Intermediate and Advanced. These are individuals, distinct from the subclasses BeginnerTool, IntermediateTool and AdvancedTool.
 
-## 1. Research Problem
+The Task class screenshot shows individuals including AnalyzeArtifacts, AnalyzeFileSystem, AnalyzeFirmware, AnalyzeMemory, AnalyzeTraffic, CrackPassWord, FindExploits, GeneratePayload, PortScanner, ScanVulnerabilities and TestWifiSecurity. One task is labelled find live hosts in the original interface. The examples are illustrative, not an exhaustive inventory.
 
-Kali Linux provides numerous tools for cybersecurity assessment, penetration testing, network analysis and digital forensics.
+The Category class screenshot shows individuals such as AttacksMiTM, AttacksVulnerability, CrackingPassWord, CrackingWireless, ExploitationWeb, InformationGathering, ManInTheMiddle, ReportCollaborationTool and ScanningForensics.
 
-Selecting suitable tools can be challenging, particularly for beginners who may not understand the differences between tools, their applications or the order in which they should be used.
+Modelling note: Similar identifiers appear in different parts of the ontology, including CrackPassWord, CrackingPassWord and CrackPassword. The original names are retained for fidelity; future revisions can standardise naming after checking their intended meanings and references.
+Research workflow
+1. Identify a cybersecurity task.
+2. Locate the task and related tools represented in the ontology.
+3. Apply the model's class relationships and, where configured, semantic reasoning rules.
+4. Run DL or SPARQL queries to retrieve matching tool information.
+5. Examine tool descriptions, example commands and related workflow information where available.
+This workflow is demonstrated in the Protégé environment rather than through a production web interface.
+5. Cybersecurity Tools Covered
+The ontology contains selected tools from network scanning, password security assessment, wireless security testing and other cybersecurity categories.
+Tool	Primary function
+Nmap	Network scanning
+Netdiscover	Network discovery
+Hashcat	Password cracking
+John the Ripper	Password auditing
+Hydra	Password authentication testing
+Aircrack-ng	Wireless security testing
+Reaver	WPS security assessment
+Zenmap	Graphical interface for Nmap
 
-Traditional tool directories and static documentation provide useful information but may not offer personalised, task-based recommendations or explain relationships between tools.
 
-This research investigates how semantic knowledge representation and reasoning can support more structured and context-aware cybersecurity tool selection.
-
-## 2. Research Aim and Objectives
-
-**Aim:** To design and implement a knowledge-based system that assists cybersecurity learners and practitioners in selecting Kali Linux tools for defined cybersecurity tasks.
-
-### Research Objectives
-
-- Review existing approaches to cybersecurity tool classification and selection.
-- Design an ontology representing cybersecurity tools, tasks, categories and user skill levels.
-- Implement semantic relationships and reasoning rules for tool recommendations.
-- Develop DL and SPARQL queries for retrieving relevant tools and workflow relationships.
-- Evaluate the system through functional testing, reasoning checks and user feedback.
-- Identify limitations and opportunities for further development.
-
-## 3. Technologies and Research Methods
-
-| Technology | Purpose |
-|---|---|
-| Protégé | Ontology development and management |
-| OWL 2 | Formal representation of cybersecurity knowledge |
-| SWRL | Rule-based semantic inference |
-| Pellet | Ontology reasoning and consistency checking |
-| SPARQL | Querying cybersecurity tools and their relationships |
-| Description Logic | Class-based reasoning and ontology queries |
-| RDF | Structured representation of semantic knowledge |
-
-The project combines ontology modelling, rule-based reasoning and semantic querying to support tool recommendations.
-
-## 4. System Architecture and Ontology Design
-
-The system represents cybersecurity knowledge through interconnected ontology concepts.
-
-### Core Classes
-
-- `Tool`
-- `Task`
-- `Category`
-- `UserLevel`
-- `SuggestedTool`
-- `SuggestedToolChain`
-
-### Object Properties
-
-- `isUsedFor` — associates a cybersecurity tool with a task.
-- `belongsToCategory` — links a tool to its category.
-- `requiresSkillLevel` — represents the experience level associated with a tool.
-- `isFollowedBy` — represents a possible sequence between tools.
-
-### Data Properties
-
-- `hasCommand` — stores tool command information.
-- `hasDescription` — stores tool descriptions.
-- `hasVersion` — represents tool version information.
-
-### Recommendation Process
-
-The research describes the following workflow:
-
-1. A cybersecurity task is identified.
-2. The task is mapped to concepts represented in the ontology.
-3. Semantic reasoning evaluates applicable rules and relationships.
-4. DL or SPARQL queries retrieve matching tools.
-5. The system presents relevant tool information, including descriptions, commands or suggested workflow relationships where available.
-
-The implementation is a Protégé-based research prototype rather than a deployed standalone application.
-
-## 5. Cybersecurity Tools Covered
-
-The ontology represents selected Kali Linux tools across different cybersecurity tasks and categories.
-
-Examples include:
-
-| Tool | Primary Function |
-|---|---|
-| Nmap | Network scanning |
-| Netdiscover | Network discovery |
-| Hashcat | Password cracking |
-| John the Ripper | Password auditing |
-| Hydra | Password authentication testing |
-| Aircrack-ng | Wireless security testing |
-| Reaver | WPS security assessment |
-| Zenmap | Graphical interface for Nmap |
-
-Additional tools and categories are represented in the ontology, including vulnerability analysis, web application testing, digital forensics, exploitation testing, reporting and network traffic analysis.
-
-## 6. Example Use Case: Password Cracking
-
-**Task:** Password Cracking  
-**User Level:** Intermediate
-
-**Recommended Tools:**
-
+The research also discusses tools for vulnerability analysis, web application security, digital forensics, traffic analysis, exploitation testing and reporting.
+6. Example Use Case: Password Cracking
+Task: Password Cracking
+User level: Advanced
+Tools returned by the original task-based SPARQL query:
 - Hashcat
-- John the Ripper
 - Hydra
+- JohnTheRipper
+The original Protégé screenshots show a SPARQL query matching the password-cracking task label and retrieving these three tools, with optional labels and example command values.
 
-### How the System Works
+Important distinction: The screenshot demonstrates task-based retrieval. It does not by itself establish that this specific query filtered results by user level. The Advanced label reflects the skill classification identified in the ontology and should be tested separately through a skill-level query.
+Example query transcribed from the original screenshot
+PREFIX KaliLinuxTools: <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
-1. The user identifies a cybersecurity task, such as password cracking.
-2. The ontology identifies tools associated with that task.
-3. Semantic relationships and reasoning rules support the selection of relevant tools.
-4. SPARQL queries retrieve matching tool information.
-5. The system presents recommendations based on the knowledge represented in the ontology.
+SELECT ?tool ?label ?command
+WHERE {
+  ?tool KaliLinuxTools:isUsedFor ?task .
+  ?task rdfs:label ?taskLabel .
 
-This example illustrates the task-based recommendation approach documented in the MSc research.
+  FILTER regex(str(?taskLabel), "crack.*pass", "i")
 
-The example user level is drawn from the research scenario. Independent verification of the precise skill-level filtering results remains part of further technical validation.
+  OPTIONAL { ?tool rdfs:label ?label . }
+  OPTIONAL { ?tool KaliLinuxTools:hasCommand ?command . }
+}
+The query is shown here as a transcription of the original research screenshot. Additional query files can be supplied separately for repeatable testing.
+7. Semantic Reasoning and SWRL Rules
+The project defines SWRL rules for selected tool and category classifications. The original SWRLTab screenshot shows enabled rules with names including BeginnerTools, Intermediate Tool, CrackPassword, CrackWireless, InformationGathering, PortScanner, AttacksVulnerability and ExploitWebApplication.
 
-**Note:** All recommendations are intended for authorised cybersecurity testing and educational purposes.
+For example, the visible beginner-level rule associates a Tool with Beginner through requiresSkillLevel and classifies it as BeginnerTool. Other rules use belongsToCategory to infer task-oriented recommendation classes. The screenshot also shows rules involving the hasCommand property.
 
-## 7. Semantic Reasoning and Tool Recommendations
+The SWRLTab control area displays instructions for the Drools rule engine. This is distinct from the use of Pellet as an OWL reasoner; rule execution should be documented separately from ordinary OWL reasoning.
 
-The system uses SWRL rules and ontology reasoning to support the identification and classification of relevant tools.
+The original screenshots show these rules in Protégé's SWRLTab. The presence of enabled rules and an active reasoner is evidence of the research configuration; it is not, on its own, proof that every SWRL inference was successfully executed or independently reproduced.
+8. DL and SPARQL Query Capabilities
+The dissertation documents queries intended to support:
+- Task-based retrieval: Find tools associated with a given task.
+- Skill-level filtering: Examine tools associated with particular experience levels.
+- Tool relationships: Retrieve relationships such as isFollowedBy.
+- Suggested recommendations: Explore asserted or inferred recommendation-related knowledge.
+- Validation: Check expected results and identify incorrect or missing associations.
+The repository includes original screenshots of Protégé queries and outputs. Executable .rq query files may be added as a separate reproducibility resource.
+9. Testing and Evaluation
+The original MSc dissertation reports six testing scenarios addressing task-based retrieval, skill-level conditions, workflow relationships, negative checks and reasoning/performance considerations.
 
-Rather than relying exclusively on keyword matching, the model represents relationships between cybersecurity tasks, tool categories, user levels and possible workflow sequences.
+The dissertation also describes exploratory feedback from three MSc Cybersecurity students and two ethical hacking practitioners. Participants considered selected activities including network scanning, password cracking and vulnerability scanning.
 
-The ontology includes SWRL rule structures that can be inspected using compatible ontology tools.
-
-The original dissertation documents reasoning outputs and example recommendations. Independent reproduction of those results remains an important part of the project's ongoing validation.
-
-## 8. DL and SPARQL Queries
-
-The research demonstrates several forms of semantic retrieval.
-
-### Task-Based Retrieval
-
-Retrieving tools associated with a specified cybersecurity task.
-
-### Skill-Level Filtering
-
-Identifying tools associated with beginner, intermediate or advanced users.
-
-### Workflow Relationships
-
-Retrieving tools connected through the `isFollowedBy` property.
-
-### Suggested Tool Recommendations
-
-Querying tool recommendations represented or inferred within the ontology.
-
-The repository includes screenshots documenting DL and SPARQL query examples from the original research.
-
-Executable query files can be added to make the evaluation easier for other researchers to reproduce.
-
-## 9. Testing and Evaluation
-
-The original dissertation documents six evaluation scenarios covering:
-
-1. Task-based tool retrieval.
-2. Skill-level filtering.
-3. Tool-sequence retrieval.
-4. Advanced and combined query conditions.
-5. Negative testing to identify incorrect associations.
-6. Performance and reasoning checks.
-
-The dissertation reports that the tested scenarios produced results consistent with the intended ontology relationships.
-
-### User Feedback
-
-The research also reports feedback from five participants:
-
-- Three MSc Cybersecurity students.
-- Two ethical hacking practitioners.
-
-Participants assessed the usefulness of tool recommendations for common cybersecurity activities.
-
-The feedback described benefits for learning and workflow guidance, while identifying opportunities to expand the ontology and improve accessibility.
-
-These findings represent a small exploratory evaluation, not a large-scale independent validation study.
-
-## 10. How to Open and Examine the Ontology
-
-### Requirements
-
-- Protégé Desktop with OWL support.
-- A compatible ontology reasoner, such as the Pellet configuration used in the original research.
-- A SPARQL-capable environment for reproducing semantic queries.
-
-### Steps
-
-1. Download or clone this GitHub repository.
+The reported results indicate that the prototype provided structured tool-selection guidance within the tested scenarios. The evaluation was small in scale and does not establish broad statistical performance, independent industry adoption or production reliability.
+10. How to Explore the Ontology
+1. Download or clone this repository.
 2. Open Protégé Desktop.
-3. Select **File → Open**.
-4. Open `kali_linux_tool_recommendation_ontology.owl`.
-5. Examine the ontology's classes, object properties, data properties and individuals.
-6. Open the SWRL rule interface to inspect the rule structures.
-7. Configure a compatible reasoner and check ontology consistency.
-8. Use the DL Query interface to explore class expressions and relationships.
-9. Reproduce the SPARQL queries documented in the dissertation using a compatible query environment.
-
-**Important:** Although the file uses the `.owl` extension, its contents are serialised in Turtle syntax. If an application does not detect the format automatically, select Turtle/RDF Turtle when importing it.
-
-Reasoner compatibility and query execution should be verified in the selected software environment. These instructions describe how to examine the artefact; they do not imply that all tests have been independently reproduced.
-
-## 11. Research Contributions
-
-This project contributes the following research artefacts and approaches.
-
-### Ontology-Based Cybersecurity Knowledge Model
-
-A structured representation connecting selected Kali Linux tools with cybersecurity tasks, categories and user experience levels.
-
-### Semantic Reasoning Framework
-
-A rule-based approach for representing and inferring relationships relevant to cybersecurity tool recommendations.
-
-### Query-Based Recommendation Approach
-
-DL and SPARQL query methods for retrieving tool information, skill-level associations and workflow relationships.
-
-### Educational Application
-
-A prototype designed to help learners understand cybersecurity tool selection through structured semantic knowledge.
-
-These are contributions demonstrated within the scope of the MSc project. Claims of wider research novelty or industry impact would require additional independent evaluation.
-
-## 12. Ethical and Legal Considerations
-
-The project is intended for education, research and authorised cybersecurity testing.
-
-The ontology includes ethical and risk-related annotations to support responsible interpretation of recommendations.
-
-Users should obtain appropriate permission before conducting security assessments and comply with applicable laws and professional standards.
-
-This repository does not authorise testing against third-party systems.
-
-## 13. Research Limitations
-
-The original research identifies several limitations:
-
-- Only a selected subset of Kali Linux tools is represented.
-- Ontology population and maintenance require manual effort.
-- Some workflow relationships are explicitly modelled rather than automatically discovered.
-- The system operates primarily within Protégé.
-- A standalone user interface and production API were not developed.
-- User feedback was collected from a small group.
-- Further independent testing is required to establish broader reliability and practical impact.
-
-## 14. Future Research and Development
-
-Potential improvements include:
-
-- Expanding coverage to additional Kali Linux tools.
-- Automating the collection and updating of tool information.
-- Developing a user-friendly web interface.
-- Supporting natural-language cybersecurity task descriptions.
-- Hosting the ontology through a semantic query service.
-- Improving workflow recommendations and ethical context.
-- Conducting larger independent usability and accuracy evaluations.
-- Collaborating with cybersecurity researchers and open-source contributors.
-
-## 15. Repository Contents
-
-The repository contains:
-
-- The original MSc dissertation.
-- The OWL ontology artefact.
-- Screenshots of ontology classes and relationships.
-- DL query demonstrations.
-- SPARQL query demonstrations.
-- Supporting implementation and evaluation screenshots.
-
-**Ontology file:** `kali_linux_tool_recommendation_ontology.owl`
-
-**GitHub repository:** https://github.com/Effiong-Okon-Antai/kali-linux-knowledge-based-system
-
-## 16. Research Status
-
-**Status:** Completed MSc research prototype, with further technical validation and development opportunities.
-
-**Original submission:** August 2025.
-
-The repository is maintained to document the research implementation, support reproducibility and provide a foundation for future technical contributions.
-
-## 17. Acknowledgement
-
-I acknowledge the guidance and academic supervision of Dr Richard Otuka of Nottingham Trent University during the development and evaluation of this MSc Cybersecurity research project.
-
-## 18. Author
-
-**Effiong Okon Antai**  
+3. Open the ontology file [`kali_linux_tool_recommendation_ontology.owl`](./kali_linux_tool_recommendation_ontology.owl).
+4. Inspect Classes, Object properties, Data properties and Individuals by class.
+5. Inspect the SWRLTab rules if the appropriate plugin is installed.
+6. Configure a compatible reasoner and examine consistency and inferred relationships.
+7. Use DL Query and a compatible SPARQL Query interface to reproduce the research examples.
+8. Compare query outputs with the original screenshots and dissertation.
+The .owl file may use Turtle serialisation; choose RDF/Turtle explicitly if your ontology software does not detect the format automatically. Plugin and reasoner availability varies by Protégé version.
+11. Research Contributions
+The MSc project developed and documented:
+- A structured ontology representing selected Kali Linux tools and cybersecurity tasks.
+- Semantic relationships linking tools, categories and experience levels.
+- SWRL rule definitions for selected classification tasks.
+- DL and SPARQL approaches to retrieving tool information and relationships.
+- A research prototype and evaluation scenarios relevant to cybersecurity education.
+These contributions are described within the scope of the MSc project. Broader claims of novelty, external recognition or industry impact would require additional independent evidence.
+12. Ethical and Legal Use
+The project is intended for learning, research and authorised cybersecurity assessments only. Tool examples and commands should be used solely in environments where the user has permission to test. The presence of a tool recommendation does not constitute permission to assess a third-party system.
+13. Limitations
+- The ontology covers a selected subset of Kali Linux tools.
+- Tool knowledge is maintained primarily through manual ontology editing.
+- Some workflow relationships are modelled rather than automatically discovered.
+- The prototype operates primarily within Protégé.
+- No standalone production interface or API was developed as part of the MSc project.
+- User feedback involved a small exploratory group.
+- Independent reproduction of the full reasoning workflow remains a future validation task.
+14. Future Development
+Potential future work includes expanding tool coverage, improving ontology maintenance, adding executable query examples, building a user-friendly interface, testing rule inference across supported reasoners, and carrying out larger independent evaluations.
+15. Repository Contents
+The repository contains the original MSc dissertation, the ontology file, and screenshots documenting ontology classes, individual tasks, categories and user levels, object and data properties, OntoGraf visualisations, SWRL rules, SPARQL queries and query outputs.
+- Ontology: [`kali_linux_tool_recommendation_ontology.owl`](./kali_linux_tool_recommendation_ontology.owl)
+- Repository: https://github.com/Effiong-Okon-Antai/kali-linux-knowledge-based-system
+16. Research Status
+Completed MSc research prototype (2025). The public repository documents the research and provides a foundation for reproducibility and future development. It is not presented as a commercially deployed or independently certified cybersecurity product.
+17. Acknowledgement
+I acknowledge the academic guidance and supervision of Dr Richard Otuka, Nottingham Trent University, during the MSc Cybersecurity project.
+18. Author
+Effiong Okon Antai
 MSc Cybersecurity — Nottingham Trent University
 
-**Research interests:** Cybersecurity, Semantic Web Technologies, Knowledge-Based Systems, Digital Forensics and Smart Energy Systems Security.
+Research interests: Cybersecurity, Semantic Web Technologies, Knowledge-Based Systems, Digital Forensics and Smart Energy Systems Security.
