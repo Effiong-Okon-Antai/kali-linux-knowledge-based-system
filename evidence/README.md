@@ -14,7 +14,9 @@ The validation evidence covers:
 
 ### View Validation Screenshots
 
-**[View All Research Validation Evidence and Screenshots](evidence/README.md)**
+
+[View Research Validation Evidence and Screenshots](evidence/README.md)
+
 
 The evidence folder contains six screenshots documenting the observed results within Protégé.
 
