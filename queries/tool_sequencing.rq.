@@ -1,0 +1,21 @@
+
+PREFIX kali: <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT
+  ?firstTool
+  ?firstLabel
+  ?nextTool
+  ?nextLabel
+WHERE {
+  ?firstTool kali:isFollowedBy ?nextTool .
+
+  OPTIONAL {
+    ?firstTool rdfs:label ?firstLabel .
+  }
+
+  OPTIONAL {
+    ?nextTool rdfs:label ?nextLabel .
+  }
+}
+ORDER BY ?firstLabel ?nextLabel
