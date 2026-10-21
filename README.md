@@ -789,6 +789,27 @@ The repository contains:
 
 **GitHub Repository:** https://github.com/Effiong-Okon-Antai/kali-linux-knowledge-based-system
 
+### System Architecture Documentation
+
+The architecture documentation explains how the ontology-based Knowledge-Based System works.
+
+It covers:
+
+- OWL ontology and RDF knowledge representation
+- Cybersecurity tools, tasks, categories and user skill levels
+- Semantic relationships and object properties
+- SWRL reasoning using Drools
+- Description Logic and SPARQL queries
+- Direct and indirect tool reachability
+
+**[View Knowledge-Based System Architecture](docs/SYSTEM_ARCHITECTURE.md)**
+
+### Research Validation Evidence
+
+The repository includes six screenshots documenting SPARQL query execution and SWRL reasoning validation in Protégé.
+
+**[View Research Validation Evidence and Screenshots](evidence/README.md)**
+
 ---
 
 ## 18. Research Status and Acknowledgement
