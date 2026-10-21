@@ -45,6 +45,57 @@ This research investigates how semantic knowledge representation and reasoning c
 - Evaluate the system through functional testing, reasoning checks and user feedback.
 - Identify limitations and opportunities for further development.
 
+- 
+## Research Ontology Versions
+
+This repository preserves two versions of the OWL ontology developed for the research project:
+
+**A Semantically Developed Knowledge-Based System for Deploying Kali Linux Tools**
+
+### 2025 — Original MSc Research Ontology
+
+**File:** [kali_linux_tool_recommendation_ontology.owl](kali_linux_tool_recommendation_ontology.owl)
+
+This is the original ontology developed as part of my MSc Cybersecurity research at Nottingham Trent University in 2025.
+
+It models:
+- Kali Linux cybersecurity tools
+- Cybersecurity tasks
+- User skill levels
+- Tool categories
+- Tool-to-tool relationships
+- SWRL-based recommendation rules
+
+This version preserves the original research model.
+
+### 2026 — SWRL Inference Validation
+
+**File:** [kali_linux_tool_recommendation_inferred.owl](kali_linux_tool_recommendation_inferred.owl)
+
+This version contains inferred assertions transferred into the ontology following additional validation in Protégé using SWRLTab and the Drools rule engine in October 2026.
+
+The validation reported:
+- 18 SWRL rules exported
+- 31 OWL classes exported
+- 63 OWL individuals exported
+- 477 inferred axioms
+- Successful inference transfer into the OWL model
+
+This version demonstrates the results of rule-based semantic reasoning.
+
+### SPARQL Query Validation
+
+The four documented SPARQL queries are available in the [queries folder](queries/).
+
+They demonstrate:
+1. Password-cracking tool retrieval
+2. Skill-level filtering
+3. SWRL-based suggested-tool classifications
+4. Tool-sequencing relationships
+
+The original research was completed in 2025, while additional query verification and documentation were carried out in October 2026.
+
+
 ---
 
 ## 3. Technologies Used
