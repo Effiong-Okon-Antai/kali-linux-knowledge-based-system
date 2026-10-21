@@ -1,0 +1,17 @@
+
+PREFIX kali: <http://www.semanticweb.org/milli/ontologies/2025/6/KaliLinuxTools#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT DISTINCT ?tool ?label ?level
+WHERE {
+  ?tool kali:requiresSkillLevel ?level .
+
+  FILTER (
+    ?level = kali:Intermediate
+  )
+
+  OPTIONAL {
+    ?tool rdfs:label ?label .
+  }
+}
+ORDER BY ?label
