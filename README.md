@@ -828,6 +828,35 @@ The guide covers:
 
 The guide distinguishes the original 2025 MSc research from the additional technical validation performed in October 2026.
 
+
+### Professional Research Portfolio
+
+A dedicated research portfolio summarises the design, implementation, technical validation and contributions of my MSc Cybersecurity research.
+
+The portfolio covers:
+
+- Research problem, aims and objectives
+- OWL ontology development and knowledge representation
+- SWRL rule-based reasoning and inference
+- Five verified SPARQL queries
+- Direct and indirect cybersecurity tool relationships
+- Research evaluation and technical contributions
+- Validation evidence and reproducibility
+- Research limitations and future development
+
+**[View My Cybersecurity Research Portfolio](docs/RESEARCH_PORTFOLIO.md)**
+
+### Technical Research Documentation
+
+| Document | Description |
+|---|---|
+| [Research Portfolio](docs/RESEARCH_PORTFOLIO.md) | Professional summary of the research and technical contributions |
+| [System Architecture](docs/SYSTEM_ARCHITECTURE.md) | Ontology design, semantic relationships and reasoning architecture |
+| [Testing and Reproducibility](docs/TESTING_AND_REPRODUCIBILITY.md) | Instructions for reproducing the documented tests |
+| [SPARQL Query Documentation](queries/README.md) | Five documented semantic queries |
+| [Research Validation Evidence](evidence/README.md) | Six Protégé validation screenshots |
+
+
 ---
 
 ## 18. Research Status and Acknowledgement
