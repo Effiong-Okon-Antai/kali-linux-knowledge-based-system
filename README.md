@@ -810,6 +810,24 @@ The repository includes six screenshots documenting SPARQL query execution and S
 
 **[View Research Validation Evidence and Screenshots](evidence/README.md)**
 
+
+### Testing and Reproducibility Guide
+
+This repository includes a technical guide explaining how to reproduce the ontology reasoning and SPARQL validation tests using Protégé.
+
+The guide covers:
+
+- Opening and examining the original OWL ontology
+- Executing SWRL rules using Drools
+- Transferring inferred assertions into the ontology
+- Running the five documented SPARQL queries
+- Comparing query results with recorded validation evidence
+- Understanding reproducibility requirements and research limitations
+
+**[View Testing and Reproducibility Guide](docs/TESTING_AND_REPRODUCIBILITY.md)**
+
+The guide distinguishes the original 2025 MSc research from the additional technical validation performed in October 2026.
+
 ---
 
 ## 18. Research Status and Acknowledgement
